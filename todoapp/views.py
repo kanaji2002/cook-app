@@ -13,6 +13,17 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 
+from django.shortcuts import render
+from .models import Image
+
+def showall(request):
+    images = Image.objects.all()
+    context = {'images':images}
+    return render(request, 'todoapp/showall.html', context)
+
+
+
+
 # Create your views here.
 class TaskList(LoginRequiredMixin,ListView):
     model=Task
