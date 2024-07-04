@@ -1,5 +1,5 @@
 
-
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -7,6 +7,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-7md-w(8@ez+=50$#j876f6k6gax!lc@jtho5%abk3c!+5qrh+t'
 
+IMAGE_ROOT = os.path.join(BASE_DIR, 'images')
+IMAGE_URL = '/images/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# print(MEDIA_ROOT)
 DEBUG = True
 
 ALLOWED_HOSTS = []

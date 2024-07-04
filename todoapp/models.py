@@ -8,7 +8,7 @@ class Task(models.Model):
     description=models.TextField(null=True,blank=True)
     completed=models.BooleanField(default=False)
     createDate=models.DateTimeField(auto_now_add=True)
-
+    image=models.ImageField(upload_to='cook_images/',null=True, blank=True)
     def __str__(self):
         return self.title
     
