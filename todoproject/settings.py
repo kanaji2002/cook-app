@@ -11,6 +11,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MEDIA_URL = '/media/'
+# if DEBUG:
+MEDIA_ROOT = BASE_DIR / 'media'
+# else:
+#     MEDIA_ROOT = f'/var/www/{BASE_DIR.name}/media'
+print(MEDIA_ROOT)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -45,6 +51,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media', # これを追加する
             ],
         },
     },
